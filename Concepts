@@ -1,0 +1,35 @@
+# Elasticsearch
+general concepts
+
+* Horizontally scalable search engine
+* Each Shard is an inverted document index
+* In addition to searching:
+   * Supports structured data
+   * Can aggregate data quickly
+* Elasticsearch is basically an api rest, so its use is universal because with a simple HTTP request you can send and receive data.
+
+
+# Kibana
+general concepts
+
+* Web interface for searching and viewing
+* Complex aggregations, graphs, graphs and dashboards
+* Widely used for log analysis
+
+# Logstash & Beats
+general concepts
+
+* Data ingestion into Elasticsearch
+* Filebeat can monitor log files, analyze and import them into Elasticsearch near-real-time
+* Lostash can import data from multiple computers
+* Not only used for log data
+
+# X-pack (paid function)
+general concepts
+
+* Safety
+* Alerts
+* Monitoring
+* Reports
+* Machine Learning
+* Graphs
