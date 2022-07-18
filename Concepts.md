@@ -99,3 +99,46 @@ He: 2
 Bad: 2
 
 
+* **TF-IDF**: Term Frequency * Inverse Document Frequency
+
+* **Term Frequency**: Frequency with which an word appears ina document
+
+* **Document Frequency**: It is the frequency with which a word appears in all document
+
+* **Relevancy**: Term Frequency / Document Frequency, measure in an document
+
+Scalability capacity
+
+Index calling "shards"
+
+Cluster are a set of computers that process data together 
+
+An index is divided in shards
+DOcuments are attributed to an specific shard
+
+each shard could be in different node of an cluster
+each shard is an index Lucene independent
+
+## Shard is primary and replica
+
+This index have two shards primary and two replica. You application must intersperse the request between node
+
+The write request is directed to the primary shard, and then to the replica
+The read request is directed to the primary shard or any other replica
+
+We can set the amount of shards and replicas per http request,
+
+for each shards there is a replica, in case each shards has a replica. Assuming there are 3 shards that each have 1 replica the total is 6
+
+shards     1 ---- 2 ---- 3
+           |      |      |
+replica    1      1      1
+total      2   +  2   +  2  = 6
+
+Now if you have 3 shards and each shard has 2 replicas then there will be 9 shards
+
+shards     1 ---- 2 ---- 3
+           |      |      |
+replica 1  1      1      1
+replica 2  1      1      1
+total      3   +  3  +   3   = 9
